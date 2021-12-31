@@ -1,0 +1,25 @@
+<label>Server Name</label>
+<!-- 
+  One-way data binding:
+
+  <input 
+  type="text"
+  class="form-control"
+  (input)="onUpdateServerName($event)"
+/> -->
+
+<!--
+  Two way data binding (below):
+-->
+<input 
+  type="text"
+  class="form-control"
+  [(ngModel)]="serverName"
+/>
+<h1>{{ serverName }}</h1>
+<h2><strong>This is inside of the app-servers component</strong></h2>
+<button class='btn btn-primary'
+[disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+<p>{{ serverCreationStatus }}</p>
+<h3>Load your servers here:</h3>
+<app-server></app-server>
